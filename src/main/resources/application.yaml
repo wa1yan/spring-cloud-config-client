@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: spring-cloud-config-client
+  profiles:
+    active: qa
+  config:
+    import: optional:configserver:http://user:password@localhost:8888?fail-fast=true&max-attempts=10&max-interval=1500&multiplier=1.2&initial-interval=1100
+
+#need to refresh for config client after updating on config data
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+server:
+  port: 8081
