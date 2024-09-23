@@ -7,6 +7,11 @@ spring:
     active: dev
   config:
     import: optional:configserver:http://localhost:8888?fail-fast=true&max-attempts=10&max-interval=1500&multiplier=1.2&initial-interval=1100
+  cloud:
+    config:
+      label: feature #we can add branch name to fetch data from repo
+      fail-fast: true
+      name: ${spring.application.name}
 
 #need to refresh for config client after updating on config data
 management:
@@ -17,6 +22,8 @@ management:
 
 logging:
   level:
-    org.springframework.cloud: DEBUG
+    org:
+      springframework:
+        cloud: DEBUG
 
 

@@ -26,8 +26,10 @@ public class SpringCloudConfigClientApplication {
 
     @GetMapping("/greet")
     public String greet() {
-        var greet = greetPropertiesConfig.getGreet();
-        return Optional.of(greet).orElse("Hello from client application");
+        if(greetPropertiesConfig.isGreetServiceEnabled()) {
+            return greetPropertiesConfig.getGreet();
+        }
+        return "Hello with default value";
     }
 
 }
