@@ -42,6 +42,6 @@ public class FeatureToggleAspect {
 
     private Object handleFeatureDisabled(String featureName) {
         log.info("Feature {} is disabled.", featureName);
-        return "";
+        return new Object();
     }
 }

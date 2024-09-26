@@ -22,6 +22,10 @@ public class RegistrationService {
                 .build();
 
         notificationService.sendNotification(request);
+
+        //do something process per business logic
+
+
         log.info("Registration is successful: {}", response.toString());
         return response;
     }
