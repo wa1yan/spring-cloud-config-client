@@ -14,5 +14,5 @@ import org.springframework.context.annotation.Configuration;
 public class GreetPropertiesConfig {
 
     private String greet;
-    private boolean greetServiceEnabled;
+    private String disabledFeatures;
 }
