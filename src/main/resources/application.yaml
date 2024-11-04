@@ -9,7 +9,7 @@ spring:
     import: optional:configserver:http://localhost:8888?fail-fast=true&max-attempts=10&max-interval=1500&multiplier=1.2&initial-interval=1100
   cloud:
     config:
-      label: feature #we can add branch name to fetch data from repo
+      label: main #we can add branch name to fetch data from repo
       fail-fast: true
       name: ${spring.application.name}
 
@@ -22,8 +22,9 @@ management:
 
 logging:
   level:
-    org:
-      springframework:
-        cloud: DEBUG
+    org.springframework.cloud: DEBUG
+    org.springframework.boot.actuate: DEBUG
+    org.springframework.cloud.bus: DEBUG
+    org.springframework.cloud.context.config: DEBUG
 
 
